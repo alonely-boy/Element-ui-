@@ -1,0 +1,34 @@
+day1
+  1.项目初始化，视频资源b站黑马前端，vue电商管理系统，
+    网盘寻找源码资源(后端，数据库等工具),gitee下载前后端源码；
+    初始化github仓库
+  2.制作登录表单
+      使用的element-ui：:model,prefix-icon等属性(prefix-icon居然可以添加自己导入的外部字体样式，不用再新加i标签 添加.icon类了，有机会一定看看内部源码怎么实现的)
+                                              好像组件内部就是再生成个i，添加class类为prefix-icon的值...所以用自己的字体clas类也行。。。
+      learn：1.CSS垂直水平居中：top,left各50%，❀transform:translate(-50%,-50%)
+             2.box-shadow,box-sizing等属性使用
+             3.注释多写点，html部分也要写清中文注释表示盒子区域，文档也经常写写，养成混工时的习惯。
+      element-ui:表单的使用，以前自己看element-ui的文档各种看不懂，跟着视频看就简单很多，:model :rules prop 表单验证，输入框验证ref和this.$refs.loginFormRef.validate
+
+  3.
+    还好提前装过Git用了用GitGUI，不然不知道光Git都要花多久，VueCli也直接搭好了，搭完再npm install个axios和elementUI，elementUI还要再多导入个样式表
+    验证需要后端返回结果 ,视频使用的async和await完全没见过，目前只了解一点点axios还没怎么用过
+    下一步：看完ES6 promise对象，搭建后台环境，完成视频里登录验证过程
+      
+day2
+  1.今天太爽了，既找到了网络接口 'https://www.liulongbin.top:8888/api/private/v1/' 又学会了搭建本地接口
+    困扰了几个月的前后端交互问题终于稍微有了点头绪
+
+    因为网络接口可能过不了多久就会过期或者收费啥的，再记录下本地配置流程
+
+      1）以前学jQuery的ajax时安装的wampserver排上用场了，这玩意还带数据库，phpmyadmin工具还有图形化操作数据库的界面
+         这样视频里给的mydb,sql直接导入到了E:\wamp64\bin\mariadb\mariadb10.4.10\data\mydb目录下，数据库就搭建好了
+      2) 运行视频里给的第二个app.js，在cmd窗口cd到目录下直接node app.js就把后端接口跑起来了，跑之前要确保wampserver已运行,且数据库的用户名为root,密码也为root
+      3) 经过测试，网络接口和本地接口都能使用。
+      4) main.js中 
+                axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'              //本地接口
+                Vue.prototype.$http = axios;
+         组件中
+                async await
+  2.学习任务:下一步：看完ES6 promise对象
+    操作任务:对着视频学完电商管理系统(这个优先度高，学习任务看ES6标准入门往后推)目录:P25
